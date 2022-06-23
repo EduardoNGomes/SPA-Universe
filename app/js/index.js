@@ -1,50 +1,13 @@
-function route(event) {
-  event = event || window.event
-  event.preventDefault()
+import { Router } from './router.js'
 
-  window.history.pushState({}, '', event.target.href)
-  handle()
-}
+const router = new Router()
 
-function handle() {
-  const { pathname } = window.location
-  const route = routes[pathname] || routes[404]
+router.add('/', '/app/pages/home.html')
+router.add('/universe', '/app/pages/universe.html')
+router.add('/explorer', '/app/pages/explorer.html')
+router.add(404, '/app/pages/404.html')
 
-  switch (route) {
-    case '/app/pages/universe.html':
-      document.querySelector('body').classList.remove('body-1')
-      document.querySelector('body').classList.remove('body-3')
+router.handle()
 
-      document.querySelector('body').classList.add('body-2')
-      break
-
-    case '/app/pages/explorer.html':
-      document.querySelector('body').classList.remove('body-1')
-      document.querySelector('body').classList.remove('body-2')
-
-      document.querySelector('body').classList.add('body-3')
-      break
-
-    default:
-      document.querySelector('body').classList.remove('body-2')
-      document.querySelector('body').classList.remove('body-3')
-
-      document.querySelector('body').classList.add('body-1')
-      break
-  }
-
-  fetch(route)
-    .then(data => data.text())
-    .then(html => {
-      document.querySelector('#app').innerHTML = html
-    })
-}
-
-const routes = {
-  '/': '/app/pages/home.html',
-  '/universe': '/app/pages/universe.html',
-  '/explorer': '/app/pages/explorer.html',
-  404: '/app/pages/404.html'
-}
-
-handle()
+window.onpopstate = () => router.handle()
+window.route = () => router.route()
