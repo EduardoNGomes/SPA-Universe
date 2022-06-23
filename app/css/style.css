@@ -15,17 +15,17 @@ body {
 }
 
 .body-1 {
-  background: url(./app/assets/images/bg.png) no-repeat;
+  background: url(../assets/images/bg.png) no-repeat;
   background-size: cover;
 }
 
 .body-2 {
-  background: url(./app/assets/images/bg-2.png) no-repeat;
+  background: url(../app/assets/images/bg-2.png) no-repeat;
   background-size: cover;
 }
 
 .body-3 {
-  background: url(./app/assets/images/bg-3.png) no-repeat;
+  background: url(../app/assets/images/bg-3.png) no-repeat;
   background-size: cover;
 }
 
