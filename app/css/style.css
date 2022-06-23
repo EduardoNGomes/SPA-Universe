@@ -20,13 +20,13 @@ nav {
   margin: 4rem 1rem;
 
   display: flex;
-  gap: 25px;
+  gap: 20px;
   align-items: center;
 
 }
 
 nav a {
-  color: rgb(184, 184, 184);
+  color: #E1E1E6;
   text-decoration: none;
   font-size: 1.7rem;
 
@@ -39,6 +39,46 @@ nav a:hover{
 
 }
 
-main h1{
-  color: white;
+.home{
+  margin: 0 1rem;
+  text-align: center;
+}
+
+.home h1{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 6rem;
+  color: #E1E1E6;
+
+  margin-bottom: 2.4rem;
+
+}
+
+.home button{
+  background: transparent;
+  color: #E1E1E6;
+  padding: 1.2rem 3.2rem;
+  text-transform: uppercase;
+
+  border: 2px solid #FFFFFF;
+  border-radius: 5px;
+}
+
+
+main{
+  color: #E1E1E6;
+  margin: 0 1rem;
+}
+
+main h1 {
+  font-size: 4rem;
+  margin-bottom: 1.6rem;
+}
+
+main p{
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.9rem;
+  
 }
