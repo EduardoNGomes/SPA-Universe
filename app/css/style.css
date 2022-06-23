@@ -10,64 +10,87 @@
 }
 
 body {
-  background: url(/app/assets/images/bg.png) no-repeat;
-  background-size: cover;
   width: 100%;
   height: 100vh;
 }
 
+.body-1 {
+  background: url(/app/assets/images/bg.png) no-repeat;
+  background-size: cover;
+}
+
+.body-2 {
+  background: url(/app/assets/images/bg-2.png) no-repeat;
+  background-size: cover;
+}
+
+.body-3 {
+  background: url(/app/assets/images/bg-3.png) no-repeat;
+  background-size: cover;
+}
+
 nav {
-  margin: 4rem 1rem;
+  padding: 4rem 1rem;
 
   display: flex;
   gap: 20px;
   align-items: center;
-
 }
 
 nav a {
-  color: #E1E1E6;
+  color: #bebebe;
   text-decoration: none;
   font-size: 1.7rem;
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  transition: 0.3s;
 }
 
-nav a:hover{
+nav a:hover {
   color: white;
-  font-size: 2rem;
-
+  font-size: 2.5rem;
 }
 
-.home{
-  margin: 0 1rem;
+.home {
+  margin: 1rem;
   text-align: center;
 }
 
-.home h1{
+.home h1 {
   font-style: normal;
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 6rem;
-  color: #E1E1E6;
+  color: #e1e1e6;
 
   margin-bottom: 2.4rem;
-
 }
 
-.home button{
+.home button {
   background: transparent;
-  color: #E1E1E6;
-  padding: 1.2rem 3.2rem;
+  color: #e1e1e6;
+  padding: 1rem 3rem;
   text-transform: uppercase;
 
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   border-radius: 5px;
+
+  font-size: 1.4rem;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.home button:hover {
+  padding-left: 4.2rem;
+  padding-right: 4.2rem;
 
-main{
-  color: #E1E1E6;
+  font-size: 1.6rem;
+}
+
+main {
+  color: #e1e1e6;
   margin: 0 1rem;
 }
 
@@ -76,9 +99,47 @@ main h1 {
   margin-bottom: 1.6rem;
 }
 
-main p{
+main p {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 2.9rem;
-  
+}
+
+@media (min-width: 820px) {
+  nav {
+    margin-bottom: 4rem;
+
+    gap: 32px;
+
+    padding: 4rem;
+  }
+
+  nav a {
+    font-size: 2.2rem;
+  }
+
+  .home {
+    margin: 10rem;
+    text-align: center;
+  }
+
+  .home h1 {
+    font-size: 4.8rem;
+  }
+
+  main {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  main .text {
+    padding-right: 40%;
+  }
+
+  main .text h1 {
+    font-size: 4.8rem;
+  }
+  main .text p {
+    font-size: 2rem;
+  }
 }

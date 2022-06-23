@@ -10,6 +10,29 @@ function handle() {
   const { pathname } = window.location
   const route = routes[pathname] || routes[404]
 
+  switch (route) {
+    case '/app/pages/universe.html':
+      document.querySelector('body').classList.remove('body-1')
+      document.querySelector('body').classList.remove('body-3')
+
+      document.querySelector('body').classList.add('body-2')
+      break
+
+    case '/app/pages/explorer.html':
+      document.querySelector('body').classList.remove('body-1')
+      document.querySelector('body').classList.remove('body-2')
+
+      document.querySelector('body').classList.add('body-3')
+      break
+
+    default:
+      document.querySelector('body').classList.remove('body-2')
+      document.querySelector('body').classList.remove('body-3')
+
+      document.querySelector('body').classList.add('body-1')
+      break
+  }
+
   fetch(route)
     .then(data => data.text())
     .then(html => {
@@ -23,3 +46,5 @@ const routes = {
   '/explorer': '/app/pages/explorer.html',
   404: '/app/pages/404.html'
 }
+
+handle()
